@@ -1,0 +1,47 @@
+button {
+    background: transparent;
+    color: white;
+    width: 100px;
+    height: 100px;
+    padding: 10px 20px;
+    border: solid 2px white;
+    border-radius: 50px;
+    cursor: pointer;
+    align-items: center;
+    font-size: medium;
+    margin: 5px;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(25,25,25);
+    color: aliceblue;
+}
+
+.move-icon{
+    width: 60px;
+    height: 60px;
+}
+
+
+#main-el {
+    text-align: center;
+}
+
+#result-el{
+    font-size: large;
+}
+
+#move-el
+{
+    font-size: large;
+}
