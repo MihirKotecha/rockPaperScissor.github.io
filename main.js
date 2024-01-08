@@ -4,9 +4,18 @@ let scissorEl = document.getElementById("scissors-el")
 let resultEl = document.getElementById("result-el")
 let moveEl = document.getElementById("move-el")
 let scoreEL = document.getElementById("score-el")
+let resetScoreEl = document.getElementById("reset-el")
 
 rockEl.addEventListener("click", () => {
     runGame("Rock")
+})
+
+resetScoreEl.addEventListener("click", () => {
+    localStorage.setItem("Wins", 0)
+    localStorage.setItem("Ties", 0)
+    localStorage.setItem("Losses", 0)
+
+    updateScore()
 })
 
 paperEl.addEventListener("click", () => {
@@ -17,11 +26,11 @@ scissorEl.addEventListener("click", () => {
     runGame("Scissor")
 })
 
-localStorage.setItem("Wins",0)
-localStorage.setItem("Ties",0)
-localStorage.setItem("Losses",0)
+localStorage.setItem("Wins", 0)
+localStorage.setItem("Ties", 0)
+localStorage.setItem("Losses", 0)
 
-function updateScore(){
+function updateScore() {
     scoreEL.innerHTML = `Wins: ${localStorage.getItem('Wins')} Ties: ${localStorage.getItem('Ties')} Losses: ${localStorage.getItem('Losses')}`
 }
 
@@ -54,7 +63,7 @@ function runGame(move) {
             moveEl.innerHTML = "Your Move: <img src='paper-emoji.png' class='move-icon'>, Computer Move: <img src='rock-emoji.png' class='move-icon'>"
             let winsCount = JSON.parse(localStorage.getItem("Wins"))
             winsCount++
-            localStorage.setItem("Wins",winsCount)
+            localStorage.setItem("Wins", winsCount)
             updateScore()
         }
         else if (compMove === "Paper") {
@@ -62,7 +71,7 @@ function runGame(move) {
             moveEl.innerHTML = "Your Move: <img src='paper-emoji.png' class='move-icon'>, Computer Move: <img src='paper-emoji.png' class='move-icon'>"
             let tiesCount = JSON.parse(localStorage.getItem("Ties"))
             tiesCount++
-            localStorage.setItem("Ties",tiesCount)
+            localStorage.setItem("Ties", tiesCount)
             updateScore()
         }
         else {
@@ -70,7 +79,7 @@ function runGame(move) {
             moveEl.innerHTML = "Your Move: <img src='paper-emoji.png' class='move-icon'>, Computer Move: <img src='scissors-emoji.png' class='move-icon'>"
             let loseCount = JSON.parse(localStorage.getItem("Losses"))
             loseCount++
-            localStorage.setItem("Losses",loseCount)
+            localStorage.setItem("Losses", loseCount)
             updateScore()
         }
     }
@@ -81,7 +90,7 @@ function runGame(move) {
             moveEl.innerHTML = "Your Move: <img src='rock-emoji.png' class='move-icon'>, Computer Move: <img src='rock-emoji.png' class='move-icon'>"
             let tiesCount = JSON.parse(localStorage.getItem("Ties"))
             tiesCount++
-            localStorage.setItem("Ties",tiesCount)
+            localStorage.setItem("Ties", tiesCount)
             updateScore()
         }
         else if (compMove === "Paper") {
@@ -89,7 +98,7 @@ function runGame(move) {
             moveEl.innerHTML = "Your Move: <img src='rock-emoji.png' class='move-icon'>, Computer Move: <img src='paper-emoji.png' class='move-icon'>"
             let loseCount = JSON.parse(localStorage.getItem("Losses"))
             loseCount++
-            localStorage.setItem("Losses",loseCount)
+            localStorage.setItem("Losses", loseCount)
             updateScore()
         }
         else {
@@ -97,7 +106,7 @@ function runGame(move) {
             moveEl.innerHTML = "Your Move: <img src='rock-emoji.png' class='move-icon'>, Computer Move: <img src='scissors-emoji.png' class='move-icon'>"
             let winsCount = JSON.parse(localStorage.getItem("Wins"))
             winsCount++
-            localStorage.setItem("Wins",winsCount)
+            localStorage.setItem("Wins", winsCount)
             updateScore()
         }
     }
@@ -108,7 +117,7 @@ function runGame(move) {
             moveEl.innerHTML = "Your Move: <img src='scissors-emoji.png' class='move-icon'>, Computer Move: <img src='paper-emoji.png' class='move-icon'>"
             let winsCount = JSON.parse(localStorage.getItem("Wins"))
             winsCount++
-            localStorage.setItem("Wins",winsCount)
+            localStorage.setItem("Wins", winsCount)
             updateScore()
         }
         else if (compMove === "Scissors") {
@@ -116,7 +125,7 @@ function runGame(move) {
             moveEl.innerHTML = "Your Move: <img src='scissors-emoji.png' class='move-icon'>, Computer Move: <img src='scissors-emoji.png' class='move-icon'>"
             let tiesCount = JSON.parse(localStorage.getItem("Ties"))
             tiesCount++
-            localStorage.setItem("Ties",tiesCount)
+            localStorage.setItem("Ties", tiesCount)
             updateScore()
         }
         else {
@@ -124,7 +133,7 @@ function runGame(move) {
             moveEl.innerHTML = "Your Move: <img src='scissors-emoji.png' class='move-icon'>, Computer Move: <img src='rock-emoji.png' class='move-icon'>"
             let loseCount = JSON.parse(localStorage.getItem("Losses"))
             loseCount++
-            localStorage.setItem("Losses",loseCount)
+            localStorage.setItem("Losses", loseCount)
             updateScore()
         }
     }
