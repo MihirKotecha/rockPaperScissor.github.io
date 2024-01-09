@@ -5,10 +5,44 @@ let resultEl = document.getElementById("result-el")
 let moveEl = document.getElementById("move-el")
 let scoreEL = document.getElementById("score-el")
 let resetScoreEl = document.getElementById("reset-el")
+let autoPlayEl = document.getElementById("auto-play-el")
 
 rockEl.addEventListener("click", () => {
     runGame("Rock")
 })
+let autoPlaying
+
+autoPlayEl.addEventListener("click",()=>{
+    
+    if(autoPlayEl.innerText==="Auto Play"){
+        autoPlaying = setInterval(autoPlay,1000)
+        autoPlayEl.innerText = "Stop Auto Play"
+    }
+    else {
+        clearInterval(autoPlaying)
+        autoPlayEl.innerText = "Auto Play"
+    }
+})
+
+
+function autoPlay(){
+    let playerMoveInt = Math.floor(Math.random() * 3)
+    let playerMove
+
+    if (playerMoveInt === 0) {
+        playerMove = "Rock"
+    }
+
+    else if (playerMoveInt === 1) {
+        playerMove = "Paper"
+    }
+
+    else {
+        playerMove = "Scissors"
+    }
+
+    runGame(playerMove)
+}
 
 resetScoreEl.addEventListener("click", () => {
     localStorage.setItem("Wins", 0)
