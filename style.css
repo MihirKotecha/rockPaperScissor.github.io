@@ -22,12 +22,23 @@ button {
     margin: 5px;
 }
 
+#buttons{
+    display: grid;
+    grid-template-columns: 10px 10px;
+    justify-content: center;
+    column-gap: 125px;
+    justify-items: center;
+}
+
+#auto-play-el{
+    word-wrap: break-word;
+    padding: 5px;
+}
+
 .title{
     font-weight: bold;
     font-size: 40px;
 }
-
-
 
 .move-icon{
     width: 60px;
@@ -35,8 +46,9 @@ button {
 }
 
 
-#main-el {
+#main-el{
     text-align: center;
+    justify-content: center;
 }
 
 #result-el{
