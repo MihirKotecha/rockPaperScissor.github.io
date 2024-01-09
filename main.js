@@ -26,21 +26,7 @@ autoPlayEl.addEventListener("click",()=>{
 
 
 function autoPlay(){
-    let playerMoveInt = Math.floor(Math.random() * 3)
-    let playerMove
-
-    if (playerMoveInt === 0) {
-        playerMove = "Rock"
-    }
-
-    else if (playerMoveInt === 1) {
-        playerMove = "Paper"
-    }
-
-    else {
-        playerMove = "Scissors"
-    }
-
+    let playerMove = getComputerMove()
     runGame(playerMove)
 }
 
